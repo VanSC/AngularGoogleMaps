@@ -1,0 +1,31 @@
+<div class="container">
+    <h4>Listado de tiendas</h4>
+    <button class="btn_register btn btn-default" (click)="goToAddTienda()">Agregar Tienda</button>
+</div>
+<hr>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Latitud</th>
+                <th>Longitud</th>
+                <th>Distrito</th>
+                <th scope="2">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tienda of tiendas">
+                <td>{{ tienda.nombre }}</td>
+                <td>{{ tienda.latitud }}</td>
+                <td>{{ tienda.longitud }}</td>
+                <td>{{ tienda.distrito }}</td>
+                <td class="d-flex justify-content-between align-items-center">
+                    <i style="font-size: 25px;" class="pe pe-7s-trash text-accent"
+                    (click)="deleteTienda(tienda)"></i>&nbsp;&nbsp;
+                    <i style="font-size: 25px;" class="pe pe-7s-pen text-accent" (click)="editTienda(tienda)"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

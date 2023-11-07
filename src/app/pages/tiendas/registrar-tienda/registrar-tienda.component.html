@@ -1,0 +1,66 @@
+<section class="content">
+    <div class="container-fluid">
+        <div class="row m-t-sm">
+            <div class="col-md-15">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="col-md-12 col-sm-12" id="form" style="display:block;">
+                            <div class="panel panel-filled">
+                                <div class="panel-body">
+                                    <div class="view-header">
+                                        <div class="header-icon">
+                                            <i class="pe page-header-icon pe-7s-map"></i>
+                                        </div>
+                                        <h4>Registro de Tienda</h4>
+                                        <hr>
+                                        <span>Ingresar los siguientes datos</span>
+                                        <div class="panel-body">
+                                            <form class="form-horizontal" (ngSubmit)="addTienda()">
+                                                <div class="form-group">
+                                                    <label for="nombre" class="control-label">Nombre:</label><br>
+                                                    <div class=""><input type="text" class="form-control" id="nombre"
+                                                            name="nombre" [(ngModel)]="nuevaTienda.nombre"
+                                                            placeholder="Nombre de la tienda">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="latitud" class="control-label">Latitud:</label><br>
+                                                    <div class=""><input type="text" class="form-control" id="latitud"
+                                                            name="latitud" [(ngModel)]="nuevaTienda.latitud"
+                                                            placeholder="12.3456"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="longitud" class="control-label">Longitud:</label><br>
+                                                    <div class=""><input type="text" class="form-control" id="longitud"
+                                                            name="longitud" [(ngModel)]="nuevaTienda.longitud"
+                                                            placeholder="78.9012"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="distrito" class="control-label">Distrito:</label><br>
+                                                    <div class="">
+                                                        <select class="form-control" id="distrito" name="distrito"
+                                                            [(ngModel)]="nuevaTienda.distrito">
+                                                            <option *ngFor="let distrito of distritos"
+                                                                [value]="distrito">{{ distrito }}</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group text-center m-b-xs">
+                                                    <button type="submit" class="btn btn-default"
+                                                        style="margin-right: 5px;">Registrar</button>
+                                                    <button type="reset" class="btn btn-default"
+                                                        style="margin-left: 5px;">Cancelar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
